@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Pepsi 0.5l",
+    "price": 1.49,
+    "type": "drink"
+  },
+  {
+    "name": "Pepsi 1l",
+    "price": 2.49,
+    "type": "drink"
+  },
+  {
+    "name": "Orange juice 0.5l",
+    "price": 1.40,
+    "type": "drink"
+  },
+  {
+    "name": "Lemon tea 1l",
+    "price": 1.99,
+    "type": "drink"
+  },
+  {
+    "name": "Cola-Cola 0.33l",
+    "price": 0.89,
+    "type": "drink"
+  },
+  {
+    "name": "Cola-Cola 1l",
+    "price": 2.99,
+    "type": "drink"
+  },
+  {
+    "name": "Heineken 0.5l",
+    "price": 1.89,
+    "type": "drink"
+  },
+  {
+    "name": "Soda 0.5l",
+    "price": 0.49,
+    "type": "drink"
+  },
+  {
+    "name": "Tomato juice 0.5l",
+    "price": 0.99,
+    "type": "drink"
+  },
+  {
+    "name": "Grapefruit juice 0.5l",
+    "price": 0.99,
+    "type": "drink"
+  },
+  {
+    "name": "Aloe Vera drink 0.5l",
+    "price": 2.99,
+    "type": "drink"
+  },
+  {
+    "name": "Water 0.5l",
+    "price": 0.29,
+    "type": "drink"
+  },
+  {
+    "name": "Snickers 70g",
+    "price": 1.20,
+    "type": "food"
+  },
+  {
+    "name": "Lay's Onion 90g",
+    "price": 2.09,
+    "type": "food"
+  },
+  {
+    "name": "White chocolate 100g",
+    "price": 1.90,
+    "type": "food"
+  },
+  {
+    "name": "Nutella 250g",
+    "price": 8.50,
+    "type": "food"
+  },
+  {
+    "name": "Ketchup Heinz 100g",
+    "price": 3.49,
+    "type": "food"
+  },
+  {
+    "name": "Mustard Heinz 100g",
+    "price": 3.29,
+    "type": "food"
+  },
+  {
+    "name": "Plastic cups 20pcs",
+    "price": 1.19,
+    "type": "miscellanous"
+  },
+  {
+    "name": "Plastic cutlery 40pcs",
+    "price": 1.89,
+    "type": "miscellanous"
+  },
+  {
+    "name": "Grill kindling",
+    "price": 4.49,
+    "type": "miscellanous"
+  }
+]

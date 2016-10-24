@@ -1,0 +1,311 @@
+/*
+############################### FONT--FACES
+*/
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/Raleway/Raleway.eot');
+    src: url('../fonts/Raleway/Raleway.eot?#iefix') format('embedded-opentype'), url('../fonts/Raleway/Raleway.woff') format('woff'), url('../fonts/Raleway/Raleway.ttf') format('truetype'), url('../fonts/Raleway/Raleway.svg#Raleway-Light') format('svg');
+}
+
+@font-face {
+    font-family: 'Exo';
+    src: url('../fonts/Exo/Exo.eot');
+    src: url('../fonts/Exo/Exo.eot?#iefix') format('embedded-opentype'), url('../fonts/Exo/Exo.woff') format('woff'), url('../fonts/Exo/Exo.ttf') format('truetype'), url('../fonts/Exo/Exo.svg#Exo') format('svg');
+}
+
+@font-face {
+    font-family: 'Jura';
+    src: url('../fonts/Jura/Jura.eot');
+    src: url('../fonts/Jura/Jura.eot?#iefix') format('embedded-opentype'), url('../fonts/Jura/Jura.woff') format('woff'), url('../fonts/Jura/Jura.ttf') format('truetype'), url('../fonts/Jura/Jura.svg#Jura') format('svg');
+}
+
+/*
+############################### CSS--RESET
+*/
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+/*
+############################### MAIN-CSS
+*/
+body {
+    -webkit-font-smoothing: antialiased;
+    font-family: Raleway;
+}
+
+.mainContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("../media/bg.png");
+    -webkit-filter: brightness(60%);
+    -ms-filter: brightness(60%);
+    filter: brightness(60%);
+    transition: -webkit-filter 1s ease;
+    transition: -ms-filter 1s ease;
+    transition: filter 1s ease;
+}
+
+.content {
+    height: 600px;
+    width: 1000px;
+    border-radius: 5px;
+    background: rgba(204, 204, 204, 0.7);
+    border: 1px #ccc dashed;
+    display: none;
+}
+
+/*
+############################### RIGHT-PANEL
+*/
+.shopList {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    min-height: 400px;
+    margin-top: 10px;
+}
+
+.shopOfferList {
+    padding: 10px;
+    overflow-y: auto;
+    height: auto;
+    margin-bottom: -10px;
+    padding-top: 0;
+}
+
+.shopOfferList li:hover {
+    cursor: pointer;
+    background-color: #ccc;
+}
+
+.addBtn, .substractBtn {
+    border-radius: 15px;
+    background-color: #000;
+    border: 1px solid #666;
+    outline: none;
+    color: white;
+}
+.addBtn:hover, .substractBtn:hover {
+    background-color: #4d4d4d;
+    outline: none;
+    color: white;
+}
+.addBtn:disabled, .substractBtn:disabled {
+    background-color: #999;
+    outline: none;
+    color: white;
+    border-color: #999;
+}
+
+.makeOrderBtn {
+    margin-top: 10px;
+    width: 100%;
+    border: none;
+    background: #76b852; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #26734d , #339966); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #26734d , #339966); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    outline: none;
+}
+.makeOrderBtn:hover, .makeOrderBtn:focus, .makeOrderBtn:active {
+    background: -webkit-linear-gradient(to right, #26734d , #339966); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #26734d , #339966); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.totalPriceInput {
+    max-width: 45%;
+}
+
+.clearBtn:hover, .clearBtn:active, .clearBtn:focus, .removeBtn:hover {
+    background: -webkit-linear-gradient(to right, #D31027 , #EA384D); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #D31027 , #EA384D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.clearBtn {
+    width: 45%;
+    border-radius: 5px;
+    background: #D31027; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #D31027 , #EA384D); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #D31027 , #EA384D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: none;
+}
+
+.removeBtn {
+    background: #D31027; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #D31027 , #EA384D); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #D31027 , #EA384D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 4px;
+    color: white;
+    margin-left: 10px;
+    font-weight: bolder;
+    margin-top: 1px;
+    outline: none;
+}
+
+.shopList li button {
+    width: 22px
+}
+
+.shopList li .btn-danger {
+    margin-left: 10px;
+}
+
+.totalQuantity {
+    max-width: 40px;
+    margin: 0 5px;
+    padding: 0;
+    height: 21.5px;
+    text-align: center;
+    padding-right: 3px;
+}
+
+/*
+############################### LEFT-PANEL
+*/
+.shopOfferContainer {
+    max-height: 495px;
+    overflow-y: auto;
+}
+
+select {
+    height: 40px;
+    width: 92%;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid gray;
+    margin: 20px 10px;
+    outline: none;
+    cursor: pointer;
+    padding-left: 15px;
+}
+
+/*
+############################### PAGELOAD-ANIMATION
+*/
+.loadingAnimation {
+    height: 20px;
+    width: 20px;
+    background-color: #666;
+    border-radius: 100%;
+    -webkit-animation: getBigger .7s infinite;
+    -o-animation: getBigger .7s infinite;
+    animation: getBigger .7s infinite;
+}
+
+/*
+############################### KEYFRAMES
+*/
+keyframes getBigger {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    10% {
+        transform: scale(1.1);
+        opacity: .9;
+    }
+    20% {
+        transform: scale(1.2);
+        opacity: .8;
+    }
+    30% {
+        transform: scale(1.3);
+        opacity: .7;
+    }
+    40% {
+        transform: scale(1.4);
+        opacity: .5;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: .4;
+    }
+    60% {
+        transform: scale(1.6);
+        opacity: .3;
+    }
+    70% {
+        transform: scale(1.7);
+        opacity: .1;
+    }
+    80% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+    90% {
+        transform: scale(1.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+@-webkit-keyframes getBigger {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    10% {
+        transform: scale(1.1);
+        opacity: .9;
+    }
+    20% {
+        transform: scale(1.2);
+        opacity: .8;
+    }
+    30% {
+        transform: scale(1.3);
+        opacity: .7;
+    }
+    40% {
+        transform: scale(1.4);
+        opacity: .5;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: .4;
+    }
+    60% {
+        transform: scale(1.6);
+        opacity: .3;
+    }
+    70% {
+        transform: scale(1.7);
+        opacity: .1;
+    }
+    80% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+    90% {
+        transform: scale(1.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/*
+############################### BONUS
+*/
+/*[disabled] {*/
+    /*cursor: default !important;*/
+/*}*/
+
+*:focus, *:active {
+    outline: none !important;
+}
+
+[readonly] {
+    background-color: white !important;
+}
