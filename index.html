@@ -23,9 +23,7 @@
             </select>
             <div class="shopOfferContainer">
                 <ul class="list-group shopOfferList">
-                    <li class="list-group-item" ng-hide="product.isHidden"
-                        ng-repeat="(id, product) in shopOffer | filter : filterCategory"
-                        ng-click="addToShoppingList(product)">
+                    <li class="list-group-item" ng-hide="product.isHidden" ng-repeat="(id, product) in shopOffer | filter : filterCategory | orderBy: 'name'" ng-click="addToShoppingList(product)">
                         <strong>{{ product.name }}</strong> - {{ product.price | currency }}
                     </li>
                 </ul>
@@ -37,14 +35,11 @@
                 <li class="list-group-item" ng-repeat="(id, product) in itemsToBuy">
                     <strong>{{ product.name }}</strong> - {{ product.price | currency }}
                     <button ng-click="removeFromCart(id)" class="pull-right removeBtn">X</button>
-                    <button ng-click="addQuantity(id)" ng-disabled="product.quantity >= 15"
-                            class="pull-right addBtn">&plus;</button>
+                    <button ng-click="addQuantity(id)" ng-disabled="product.quantity >= 15" class="pull-right addBtn">&plus;</button>
 
-                    <input readonly type="text" value="{{ product.quantity }}"
-                           class="form-control totalQuantity pull-right"></input>
+                    <input readonly type="text" value="{{ product.quantity }}" class="form-control totalQuantity pull-right"></input>
 
-                    <button ng-click="substractQuantity(id)" ng-disabled="product.quantity == 1"
-                            class="pull-right substractBtn">&minus;
+                    <button ng-click="substractQuantity(id)" ng-disabled="product.quantity == 1" class="pull-right substractBtn">&minus;
                     </button>
                 </li>
             </ul>
@@ -52,12 +47,9 @@
             <button class="btn btn-danger clearBtn" ng-disabled="!checkLengthOfShoppingList()" ng-click="clearCart()">
                 Clear the cart
             </button>
-            <input readonly ng-show="!checkLengthOfShoppingList()" type="text" placeholder="Total price"
-                   class="form-control totalPriceInput pull-right"></input>
-            <input readonly ng-show="checkLengthOfShoppingList()" type="text" value="{{ totalPrice }}"
-                   class="form-control totalPriceInput pull-right"></input>
-            <button class="btn btn-success makeOrderBtn" ng-disabled="!checkLengthOfShoppingList()"
-                    ng-click="confirmOrder(); clearCart()">Submit your order
+            <input readonly ng-show="!checkLengthOfShoppingList()" type="text" placeholder="Total price" class="form-control totalPriceInput pull-right"></input>
+            <input readonly ng-show="checkLengthOfShoppingList()" type="text" value="{{ totalPrice }}" class="form-control totalPriceInput pull-right"></input>
+            <button class="btn btn-success makeOrderBtn" ng-disabled="!checkLengthOfShoppingList()" ng-click="confirmOrder(); clearCart()">Submit your order
             </button>
         </div>
 
