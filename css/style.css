@@ -7,18 +7,6 @@
     src: url('../fonts/Raleway/Raleway.eot?#iefix') format('embedded-opentype'), url('../fonts/Raleway/Raleway.woff') format('woff'), url('../fonts/Raleway/Raleway.ttf') format('truetype'), url('../fonts/Raleway/Raleway.svg#Raleway-Light') format('svg');
 }
 
-@font-face {
-    font-family: 'Exo';
-    src: url('../fonts/Exo/Exo.eot');
-    src: url('../fonts/Exo/Exo.eot?#iefix') format('embedded-opentype'), url('../fonts/Exo/Exo.woff') format('woff'), url('../fonts/Exo/Exo.ttf') format('truetype'), url('../fonts/Exo/Exo.svg#Exo') format('svg');
-}
-
-@font-face {
-    font-family: 'Jura';
-    src: url('../fonts/Jura/Jura.eot');
-    src: url('../fonts/Jura/Jura.eot?#iefix') format('embedded-opentype'), url('../fonts/Jura/Jura.woff') format('woff'), url('../fonts/Jura/Jura.ttf') format('truetype'), url('../fonts/Jura/Jura.svg#Jura') format('svg');
-}
-
 /*
 ############################### CSS--RESET
 */
@@ -35,7 +23,7 @@
 */
 body {
     -webkit-font-smoothing: antialiased;
-    font-family: Raleway;
+    font-family: Raleway, sans-serif;
 }
 
 .mainContainer {
@@ -45,9 +33,8 @@ body {
     align-items: center;
     justify-content: center;
     background: url("../media/bg.png");
-    -webkit-filter: brightness(60%);
-    -ms-filter: brightness(60%);
-    filter: brightness(60%);
+    -webkit-filter: brightness(80%);
+    filter: brightness(80%);
     transition: -webkit-filter 1s ease;
     transition: -ms-filter 1s ease;
     transition: filter 1s ease;
@@ -74,11 +61,10 @@ body {
 }
 
 .shopOfferList {
-    padding: 10px;
+    padding: 0 10px 10px 10px;
     overflow-y: auto;
     height: auto;
     margin-bottom: -10px;
-    padding-top: 0;
 }
 
 .shopOfferList li:hover {
@@ -93,11 +79,13 @@ body {
     outline: none;
     color: white;
 }
+
 .addBtn:hover, .substractBtn:hover {
     background-color: #4d4d4d;
     outline: none;
     color: white;
 }
+
 .addBtn:disabled, .substractBtn:disabled {
     background-color: #999;
     outline: none;
@@ -110,13 +98,14 @@ body {
     width: 100%;
     border: none;
     background: #76b852; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #26734d , #339966); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #26734d , #339966); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to left, #26734d, #339966); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #26734d, #339966); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     outline: none;
 }
+
 .makeOrderBtn:hover, .makeOrderBtn:focus, .makeOrderBtn:active {
-    background: -webkit-linear-gradient(to right, #26734d , #339966); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #26734d , #339966); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to right, #26734d, #339966); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #26734d, #339966); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .totalPriceInput {
@@ -124,23 +113,23 @@ body {
 }
 
 .clearBtn:hover, .clearBtn:active, .clearBtn:focus, .removeBtn:hover {
-    background: -webkit-linear-gradient(to right, #D31027 , #EA384D); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #D31027 , #EA384D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to right, #D31027, #EA384D); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #D31027, #EA384D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .clearBtn {
     width: 45%;
     border-radius: 5px;
     background: #D31027; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #D31027 , #EA384D); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #D31027 , #EA384D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to left, #D31027, #EA384D); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #D31027, #EA384D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border: none;
 }
 
 .removeBtn {
     background: #D31027; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #D31027 , #EA384D); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #D31027 , #EA384D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to left, #D31027, #EA384D); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #D31027, #EA384D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border-radius: 4px;
     color: white;
     margin-left: 10px;
@@ -160,10 +149,9 @@ body {
 .totalQuantity {
     max-width: 40px;
     margin: 0 5px;
-    padding: 0;
-    height: 21.5px;
+    padding: 0 3px 0 0;
+    height: 21px;
     text-align: center;
-    padding-right: 3px;
 }
 
 /*
@@ -186,126 +174,117 @@ select {
     padding-left: 15px;
 }
 
+.chooseCategory {
+    border-color: #ccc;
+    text-align: left;
+}
+
 /*
 ############################### PAGELOAD-ANIMATION
 */
 .loadingAnimation {
-    height: 20px;
-    width: 20px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+}
+
+.firstPartAnimation, .secondPartAnimation {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
     background-color: #666;
-    border-radius: 100%;
-    -webkit-animation: getBigger .7s infinite;
-    -o-animation: getBigger .7s infinite;
-    animation: getBigger .7s infinite;
+    opacity: .6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
 }
 
-/*
-############################### KEYFRAMES
-*/
-keyframes getBigger {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    10% {
-        transform: scale(1.1);
-        opacity: .9;
-    }
-    20% {
-        transform: scale(1.2);
-        opacity: .8;
-    }
-    30% {
-        transform: scale(1.3);
-        opacity: .7;
-    }
-    40% {
-        transform: scale(1.4);
-        opacity: .5;
+.secondPartAnimation {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+    0%, 100% {
+        -webkit-transform: scale(0.0)
     }
     50% {
-        transform: scale(1.5);
-        opacity: .4;
-    }
-    60% {
-        transform: scale(1.6);
-        opacity: .3;
-    }
-    70% {
-        transform: scale(1.7);
-        opacity: .1;
-    }
-    80% {
-        transform: scale(1.8);
-        opacity: 0;
-    }
-    90% {
-        transform: scale(1.9);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(2);
-        opacity: 0;
+        -webkit-transform: scale(1.2)
     }
 }
-@-webkit-keyframes getBigger {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    10% {
-        transform: scale(1.1);
-        opacity: .9;
-    }
-    20% {
-        transform: scale(1.2);
-        opacity: .8;
-    }
-    30% {
-        transform: scale(1.3);
-        opacity: .7;
-    }
-    40% {
-        transform: scale(1.4);
-        opacity: .5;
+
+@keyframes sk-bounce {
+    0%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
     }
     50% {
-        transform: scale(1.5);
-        opacity: .4;
-    }
-    60% {
-        transform: scale(1.6);
-        opacity: .3;
-    }
-    70% {
-        transform: scale(1.7);
-        opacity: .1;
-    }
-    80% {
-        transform: scale(1.8);
-        opacity: 0;
-    }
-    90% {
-        transform: scale(1.9);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(2);
-        opacity: 0;
+        transform: scale(1.0);
+        -webkit-transform: scale(1.2);
     }
 }
 
 /*
-############################### BONUS
+############################### HTML5&BOOTSTRAP OVERWRITE
 */
-/*[disabled] {*/
-    /*cursor: default !important;*/
-/*}*/
-
-*:focus, *:active {
-    outline: none !important;
-}
-
 [readonly] {
-    background-color: white !important;
+    background-color: #fff !important;
+}
+
+.mainContainer .content *:focus, *:active {
+    outline: none;
+    border-color: #ccc;
+}
+
+/*
+############################### ANGULAR ANIMATIONS
+*/
+.shopOfferContainer .shopOfferList li.ng-enter {
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
+    opacity: 0;
+    transform: translateY(-40px);
+}
+
+.shopOfferContainer .shopOfferList li.ng-enter.ng-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.shopOfferContainer .shopOfferList li.ng-leave {
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.shopOfferContainer .shopOfferList li.ng-leave.ng-leave-active {
+    opacity: 0;
+    transform: scale(.1);
+}
+
+.shopList li.ng-enter {
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
+    opacity: 0;
+    transform: translateY(-40px);
+}
+
+.shopList li.ng-enter.ng-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.shopList li.ng-leave {
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.shopList li.ng-leave.ng-leave-active {
+    opacity: 0;
+    transform: scale(.1);
 }
