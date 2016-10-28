@@ -235,7 +235,6 @@ select {
 
 .mainContainer .content *:focus, *:active {
     outline: none;
-    border-color: #ccc;
 }
 
 /*
