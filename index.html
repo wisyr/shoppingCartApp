@@ -4,7 +4,7 @@
     <title>Shopping cart app</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
@@ -45,7 +45,7 @@
                             class="pull-right addBtn">&plus;</button>
 
                     <input readonly type="text" value="{{ product.quantity }}"
-                           class="form-control totalQuantity pull-right"></input>
+                           class="form-control totalQuantity pull-right"/>
 
                     <button ng-click="substractQuantity(id)" ng-disabled="product.quantity == 1"
                             class="pull-right substractBtn">&minus;
@@ -56,9 +56,8 @@
             <button class="btn btn-danger clearBtn" ng-disabled="!checkLengthOfShoppingList()" ng-click="clearCart()">
                 Clear the cart
             </button>
-            <!--<input readonly ng-show="!checkLengthOfShoppingList()" type="text" placeholder="Total price" class="form-control totalPriceInput pull-right"></input>-->
             <input readonly type="text" value="{{ totalPrice }}"
-                   class="form-control totalPriceInput pull-right"></input>
+                   class="form-control totalPriceInput pull-right"/>
             <button class="btn btn-success makeOrderBtn" ng-disabled="!checkLengthOfShoppingList()"
                     ng-click="confirmOrder(); clearCart()">Submit your order
             </button>
@@ -68,97 +67,13 @@
 </div>
 
 <script src="js/jquery-3.1.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
 <script src="js/angular-animate.min.js"></script>
+<script src="js/services.js"></script>
+<script src="js/controllers.js"></script>
 <script src="js/scripts.js"></script>
 <script>
-    var app = angular.module('app', ['ngAnimate']);
-
-    app.controller('MainController', ['$scope', '$http', '$log', function ($scope, $http, $log) {
-
-        $scope.shopOffer = [];
-
-        $http.get('shopItems.json')
-                .success(function (data, status, headers, config) {
-
-                    $scope.shopOffer = data;
-                    $log.info('Product list loaded from the server.');
-
-                }).error(function (data, status, headers, config) {
-
-            $log.error('Error ' + status + ' unable to download the product list.');
-
-        });
-
-
-        $scope.addToShoppingList = function (product) {
-            var index = $scope.shopOffer.indexOf(product);
-            var itemToAdd = $scope.shopOffer[index];
-            itemToAdd.quantity = 1;
-            $scope.itemsToBuy.push(itemToAdd);
-            $scope.shopOffer.splice(index, 1);
-            //localStorage.setItem("data", JSON.stringify($scope.itemsToBuy));
-        };
-
-        $scope.removeFromCart = function (id) {
-            $scope.shopOffer.push($scope.itemsToBuy[id]);
-            $scope.itemsToBuy.splice(id, 1);
-        };
-
-
-        $scope.itemsToBuy = [];
-        //JSON.parse(localStorage.getItem("data"))
-
-        $scope.getTotal = function () {
-            var total = 0;
-            if ($scope.itemsToBuy.length > 0) {
-                for (var i = 0; i < $scope.itemsToBuy.length; i++) {
-                    var product = $scope.itemsToBuy[i];
-                    total += (product.price * product.quantity);
-                }
-            }
-            return '$' + total.toFixed(2);
-        };
-
-        $scope.$watch('itemsToBuy', function () {
-            $scope.totalPrice = $scope.getTotal();
-        }, true);
-
-
-        $scope.checkLengthOfShoppingList = function () {
-            return $scope.itemsToBuy.length;
-        };
-
-        $scope.clearCart = function () {
-            for (var i = 0; i < $scope.itemsToBuy.length; i++) {
-                $scope.shopOffer.push($scope.itemsToBuy[i]);
-            }
-            $scope.itemsToBuy = [];
-        };
-
-        $scope.confirmOrder = function () {
-            window.alert("Your order is accepted.");
-        };
-
-
-        $scope.addQuantity = function (id) {
-            if ($scope.itemsToBuy[id].quantity < 15) {
-                $scope.itemsToBuy[id].quantity++;
-            }
-        };
-
-
-        $scope.substractQuantity = function (id) {
-            if ($scope.itemsToBuy[id].quantity > 0) {
-                $scope.itemsToBuy[id].quantity--;
-            }
-        };
-
-
-    }]);
-
-
+    var app = angular.module('app', ['ngAnimate', 'controllers']);
 </script>
 </body>
 </html>
