@@ -7,7 +7,7 @@
             callback = callback || function(){};
             $http.get('shopItems.json')
                 .success(callback)
-                .error(function (data, status, headers, config) {
+                .error(function (data, status) {
                 $log.error('Error ' + status + ' unable to download the product list.');
             });
         };
