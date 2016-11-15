@@ -40,7 +40,6 @@
             $scope.totalPrice = $scope.getTotal();
         }, true);
 
-
         $scope.checkLengthOfShoppingList = function () {
             return $scope.itemsToBuy.length;
         };
